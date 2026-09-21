@@ -82,3 +82,17 @@ plt.legend()
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.fill_between(range(len(analysis_df)), analysis_df['По возрастанию'], analysis_df['По убыванию'], color='gray', alpha=0.1)
 plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.boxplot(original_series, vert=False, patch_artist=True,
+            boxprops=dict(facecolor='lightblue', color='blue'),
+            medianprops=dict(color='red', linewidth=2),
+            whiskerprops=dict(color='blue'),
+            capprops=dict(color='blue'),
+            flierprops=dict(marker='o', markerfacecolor='red',
+                            markersize=4, alpha=0.5))
+plt.title('Ящик с усами (boxplot) исходных данных')
+plt.xlabel('Значение')
+plt.grid(True, linestyle='--', alpha=0.6, axis='x')
+plt.tight_layout()
+plt.show()
